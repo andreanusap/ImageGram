@@ -94,7 +94,6 @@ public class NewsFeedFunctionService : INewsFeedFunctionService
         foreach (var newsFeed in newsFeeds)
         {
             newsFeed.PostComments = newsFeed.PostComments
-                .OrderByDescending(c => c.CreatedAt)
                 .Take(2)
                 .ToList();
         }
