@@ -45,7 +45,7 @@ public static class PostRequestValidation
     /// <returns>Boolean indicating the success or failure of the validation</returns>
     private static bool IsValidExtension(IFormFile file)
     {
-        string[] _extensions = new string[] { ".jpg", ".png" };
+        string[] _extensions = new string[] { ".jpg", ".png", ".bmp" };
         var extension = Path.GetExtension(file.FileName);
         if (!_extensions.Contains(extension.ToLower()))
         {
