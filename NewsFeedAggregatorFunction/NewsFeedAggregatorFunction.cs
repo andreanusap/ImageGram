@@ -52,10 +52,11 @@ namespace NewsFeedAggregatorService
             databaseName: "ImageGramDB",
             collectionName: "Comments",
             ConnectionStringSetting = "ImageGramDBConnection",
-            LeaseCollectionName = "leases",
+            LeaseCollectionName = "leasesComments",
             CreateLeaseCollectionIfNotExists = true)]IReadOnlyList<Document> input,
             ILogger log)
         {
+            log.LogInformation("Comment aggregator fired");
             try
             {
                 if (input != null && input.Count > 0)
