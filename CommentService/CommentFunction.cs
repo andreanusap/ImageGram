@@ -38,9 +38,9 @@ public class CommentFunction
             var content = await new StreamReader(req.Body).ReadToEndAsync();
             var commentRequestModel = JsonConvert.DeserializeObject<CommentRequestModel>(content);
 
-            var post = await _commentFunctionService.SaveCommentAsync(commentRequestModel);
+            var comment = await _commentFunctionService.SaveCommentAsync(commentRequestModel);
 
-            return new OkObjectResult(post);
+            return new OkObjectResult(comment);
 
         }
         catch (Exception ex)
